@@ -9,6 +9,8 @@ function setup(){
     createCanvas(windowWidth, windowHeight);
     noStroke();
 
+    playerSprite = loadImage("https://raw.githubusercontent.com/AdisDev/Spiel/master/unnamedgame-main/unnamedgame-main/images/player.png");
+
     centerX = width / 2;
     centerY = height / 2;
 
@@ -41,16 +43,16 @@ function draw(){
 function mousePressed(){
     let fs = fullscreen();
     fullscreen(!fs);
+    redraw();
 }
 
 function player(){
-    fill(222, 13, 44)
 
-    if(playerX < centerX - 250 || playerX > centerX + 250 || playerY < centerY - 150 || playerY > centerY + 350){
-        fill(51, 204, 51);
-    }
+    //if(playerX < centerX - 250 || playerX > centerX + 250 || playerY < centerY - 150 || playerY > centerY + 350){
+        //
+    //}
 
-    rect(playerX, playerY, playerR, playerR, 15);
+    image(playerSprite, playerX, playerY);
 
     if(keyIsDown(87)){
         playerY -= playerSpeed;
