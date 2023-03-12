@@ -3,6 +3,7 @@ let centerX, centerY;
 let playerR;
 let playerSpeed;
 let gamemode = 0;
+let playerSprite;
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
@@ -23,7 +24,11 @@ function draw(){
     if(gamemode == 0){
         background(233, 233, 233);
         text("Enter fullscreen mode!", centerX-50, centerY - 20);
-        text("Press enter to play!")
+        text("Press enter to play!", centerX-50, centerY-50);
+        if(keyIsDown(13)){
+            gamemode = 1;
+        }
+        
     }
     else if(gamemode == 1){
         background(102, 204, 255)
@@ -41,7 +46,7 @@ function mousePressed(){
 function player(){
     fill(222, 13, 44)
 
-    if(playerX < centerX - 250 || playerX > centerX + 250 || playerY < centerY - 250 || playerY > centerY + 250){
+    if(playerX < centerX - 250 || playerX > centerX + 250 || playerY < centerY - 150 || playerY > centerY + 350){
         fill(51, 204, 51);
     }
 
