@@ -5,11 +5,12 @@ let playerSpeed;
 let gamemode = 0;
 let playerSprite;
 
+
 function setup(){
     createCanvas(windowWidth, windowHeight);
     noStroke();
 
-    playerSprite = loadImage("https://raw.githubusercontent.com/AdisDev/Spiel/master/unnamedgame-main/unnamedgame-main/images/player.png");
+    playerSprite = loadImage("https://raw.githubusercontent.com/AdisDev/Spiel/master/unnamedgame-main/unnamedgame-main/images/player_rechts.gif");
 
     centerX = width / 2;
     centerY = height / 2;
@@ -82,8 +83,7 @@ function player(){
 }
 
 function world(){
-    fill(255, 255, 102);
-    rect(centerX - 250, centerY - 150, 500, 500, 10);
+
 }
 
 function windowResized() {
