@@ -6,6 +6,9 @@ let gamemode = 0;
 let playerSprite;
 let idle = []
 idle.lenght = 2
+let i = 1
+let health = 75
+let strength = 75
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
@@ -41,13 +44,8 @@ function draw(){
 
         world();
         player();
+        uibar();
     }
-}
-
-function mousePressed(){
-    let fs = fullscreen();
-    fullscreen(!fs);
-    redraw();
 }
 
 function player(){
@@ -56,9 +54,13 @@ function player(){
         //
     //}
 
-    for(let i = 1; i < idle.length; i++){
-        loadImage(idle[i])
-    }
+    /*for(let i = 1; i < idle.lenght; i++){
+        image(idle[i], playerX, playerY)
+        console.log(i)
+        if(i > 2){
+            i = 1;
+        }
+    }*/
 
     if(keyIsDown(87)){
         playerY -= playerSpeed;
@@ -89,6 +91,28 @@ function player(){
 
 function world(){
 
+}
+
+function uibar(){
+    //health
+    fill(102, 0, 51)
+    rect(width - 225, height - 100, 200, 25, 10)
+    fill(153, 0, 51)
+    rect(width - 225, height - 100, health*2, 25, 10)
+
+    //strength
+    fill(0, 51, 0)
+    rect(width - 225, height - 150, 200, 25, 10)
+    fill(51, 204, 51)
+    rect(width - 225, height - 150, strength*2, 25, 10)
+
+    //inventory
+    fill(66, 66, 66)
+    rect(25, height - 137, 262, 62, 10)
+    for(let i = 0; i < 5; i++){
+        fill(158, 158, 158)
+        rect(31 + 50*i, height - 130, 48, 48, 10)
+    }
 }
 
 function windowResized() {
