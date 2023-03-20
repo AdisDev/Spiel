@@ -6,7 +6,7 @@ let gamemode = 0;
 let playerSprite;
 let idle = []
 idle.lenght = 2
-let p = 1
+let p = 0
 let health = 75
 let strength = 75
 let bg
@@ -118,12 +118,13 @@ function player(){
     }
 
     //player
+    //idle animation
     p++
     if(p < 10){
         image(idle[1], playerX - 22, playerY)
     }
     else if(p > 10 && p < 20){
-        image(idle[2], playerX - 22, playerY)
+        image(idle[2], playerX - 22, playerY- 3)
     }
     if(p >= 20){
         p = 0
@@ -131,7 +132,7 @@ function player(){
 }
 
 function world(){
-
+    //world
 }
 
 function uibar(){
