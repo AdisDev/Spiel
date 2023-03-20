@@ -4,13 +4,16 @@ let playerR;
 let playerSpeed;
 let gamemode = 0;
 let playerSprite;
-
+let idle = []
+idle.lenght = 2
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
     noStroke();
 
-    playerSprite = loadImage("https://raw.githubusercontent.com/AdisDev/Spiel/master/unnamedgame-main/unnamedgame-main/images/player_rechts.gif");
+    playerSprite = loadImage("https://raw.githubusercontent.com/AdisDev/Spiel/master/unnamedgame-main/unnamedgame-main/images/player.png");
+    idle[1] = loadImage("https://raw.githubusercontent.com/AdisDev/Spiel/master/unnamedgame-main/unnamedgame-main/images/Astronaut_2_stehen_1.png");
+    idle[2] = loadImage("https://raw.githubusercontent.com/AdisDev/Spiel/master/unnamedgame-main/unnamedgame-main/images/Astronaut_2_stehen_2.png");
 
     centerX = width / 2;
     centerY = height / 2;
@@ -53,7 +56,9 @@ function player(){
         //
     //}
 
-    image(playerSprite, playerX, playerY);
+    for(let i = 1; i < idle.length; i++){
+        loadImage(idle[i])
+    }
 
     if(keyIsDown(87)){
         playerY -= playerSpeed;
