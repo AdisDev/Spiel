@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(18, 23, 52);
+}
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spinner-box{
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+}
+.solat-system{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.orbit{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fafbfc;
+    border-radius: 50%;
+}
+.earth-orbit{
+    width: 165px;
+    height: 165px;
+    animation: spin 12s linear 0s infinite;
+}
+.venus-orbit{
+    width: 120px;
+    height: 120px;
+    animation: spin 7.4s linear 0s infinite;
+}
+.mercury-orbit{
+    width: 90px;
+    height: 90px;
+    animation: spin 3s linear 0s infinite;
+}
+.planet{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.earth{
+    top:-7px;
+    width: 14px;
+    height: 14px;
+    background-color: rgb(15, 143, 159);
+}
+.venus{
+    top: -6px;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(171, 172, 119);
+}
+.mercury{
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(175, 177, 185);
+}
+.sun{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #fbc531;
+    box-shadow: 0 0 32px #fbc531;
+}
+@keyframes spin{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(359deg);
+    }
+}
+.sun a{
+    color: #fbc531;
+    text-decoration: none;
+    font-size: 17px;
+}
